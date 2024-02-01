@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart'
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Mi proyecto de Flutter',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Proyecto 1'),
     );
   }
 }
@@ -68,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-  void _decrementCounter() {
+  void _dincrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -126,11 +125,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      floatingActionButton: Row(
+        mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+        children:<Widget>[
+        FloatingActionButton(
+        onPressed: _dincrementCounter,
+        tooltip: 'Decrement',
+        child: const Icon(Icons.remove)),
+        FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add)),
+        
+      ], // This trailing comma makes auto-formatting nicer for build methods.
+    ));
   }
 }
